@@ -31,9 +31,18 @@ Podrás visualizar:
 - Archivos que están en el área de staging.
 - Archivos que no están siendo seguidos por Git.
 
- 	-git status
+     -git status
 
 ### git add
 El comando git add sirve para añadir archivos al área de preparación, esta área es donde Git guarda los cambios antes de hacer un commit.
 
- 	-git add <nombre-del-archivo>
+ 	-git add archivo.txt #añadir un archivo especifico.
+    -git add .         #añadir todos los archivos modificados.
+
+### git commit
+Guarda los cambios en el historial del repositorio con un mensaje descriptivo.
+
+	-git commit -m"comentario que quieras guardar"
+
+  
+  
