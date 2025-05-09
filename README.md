@@ -100,5 +100,68 @@ Guarda los cambios en el historial del repositorio con un mensaje descriptivo.
 El comando git branch permite crear, listar y eliminar ramas en un repositorio, las ramas son versiones paralelas del proyecto donde puedes hacer cambios sin afectar la rama principal.
 
  	-git branch 
-  
-## 📝 clase2: como iniciar repositorio en git  
+## :computer: Clase 3
+### Ramas 🌲 ¿Qué son las Ramas en Git?
+Una rama (branch) en Git es una línea de desarrollo independiente. Permite trabajar en funcionalidades nuevas, corregir errores o probar ideas sin afectar la rama principal (main o master).
+Imagina las ramas como caminos paralelos que se pueden unir en un solo camino más adelante.
+
+## 🔹 Rama Principal (main/master)
+Cuando creas un repositorio, Git genera una rama principal llamada main (antes se llamaba master).
+Es la versión "oficial" y estable de tu proyecto.
+
+## 🔹 ¿Para qué sirven?
+- Trabajar en nuevas funcionalidades sin afectar el proyecto principal.
+- Probar ideas experimentales.
+- Colaborar con otras personas en diferentes características.
+- Corregir errores sin interrumpir el desarrollo.
+
+## 🚀 Comandos Esenciales para Ramas en Git
+## 1️⃣ Crear una Rama Nueva
+
+		-git branch nombre-de-la-rama
+
+💡 Esto crea una nueva rama, pero no te cambia a ella.
+
+## 2️⃣ Cambiarte a una Rama Existente
+
+		-git checkout nombre-de-la-rama
+
+o también:
+
+		-git switch nombre-de-la-rama
+## 3️⃣ Crear y Cambiar a la Nueva Rama al Mismo Tiempo
+
+		-git checkout -b nombre-de-la-rama
+
+o también:
+
+		-git switch -c nombre-de-la-rama
+## 4️⃣ Ver las Ramas Existentes
+	
+		-git branch
+
+💡 La rama en la que estás actualmente estará marcada con un *.
+
+## 5️⃣ Unir una Rama a otra (Merge)
+Si terminaste tu desarrollo en una rama secundaria y quieres integrarlo en main:
+
+Ve a la rama principal:
+
+		-git checkout main
+
+Haz el merge:
+
+		-git merge nombre-de-la-rama
+## 6️⃣ Eliminar una Rama
+Después de hacer un merge, puedes borrar la rama:
+
+		-git branch -d nombre-de-la-rama
+
+💡 Si aún no la has fusionado y quieres eliminarla de todas formas:
+
+		-git branch -D nombre-de-la-rama
+## 7️⃣ Ver el Historial de Ramas
+Para visualizar el historial de commits en todas las ramas de forma gráfica:
+	
+		-git log --oneline --graph --all
+
