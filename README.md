@@ -27,9 +27,38 @@ Un repositorio puede estar:
 ⚙️ Configuración inicial de Git
 Después de instalar Git, es necesario configurar tu nombre de usuario y correo electrónico. Esto es importante porque aparecerán en los commits que realizas (como una firma digital).
 
-	-git config --global user.name "Gustavo"
-  
-	-git config --global user.email "gustavomamani2464@gmail.com"
+		-git config --global user.name "Gustavo"
+  	
+		-git config --global user.email "gustavomamani2464@gmail.com"
+
+## :computer: Clase 2
+### 📝 Como iniciar un repositorio en git 
+## 1️⃣ Ve al Directorio de tu Proyecto
+Si no tienes un proyecto aún, créalo:
+
+		-mkdir mi-proyecto
+		-cd mi-proyecto
+
+## 2️⃣ Inicializa el Repositorio Localmente
+Para inicializar Git en esa carpeta, ejecuta:
+
+		-git init
+
+💡 Esto creará una carpeta oculta llamada .git, donde Git guarda todo el historial de versiones.
+
+## 3️⃣ Añadir Archivos al Área de Preparación (Staging Area)
+Para añadir todos los archivos del proyecto:
+
+		-git add .
+
+💡 El punto (.) indica que se añaden todos los archivos. También puedes especificar archivos individuales:
+
+		-git add index.html
+
+## 4️⃣ Crear un Commit (Guardar los Cambios)
+Un commit es un punto de guardado de tus cambios:
+
+		-git commit -m "Inicialización del proyecto"
 
 ## :pushpin: Comandos:
 ### :one: git init
@@ -49,7 +78,7 @@ Podrás visualizar:
 - Archivos que están en el área de staging.
 - Archivos que no están siendo seguidos por Git.
 
-     -git status
+	     -git status
 
 ### :four: git add
 El comando git add sirve para añadir archivos al área de preparación, esta área es donde Git guarda los cambios antes de hacer un commit.
@@ -72,4 +101,4 @@ El comando git branch permite crear, listar y eliminar ramas en un repositorio, 
 
  	-git branch 
   
-  
+## 📝 clase2: como iniciar repositorio en git  
