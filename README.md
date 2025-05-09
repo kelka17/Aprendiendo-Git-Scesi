@@ -1,5 +1,5 @@
 # Curso Git y GitHub Scesi
-![imagen alt]([https://pngimg.com/d/github_PNG65.png](https://github.com/kelka17/Aprendiendo-Git-Scesi/blob/81075377cafffd52d288274017da07261e23195f/pngimg.com%20-%20github_PNG65.png))
+![Imagen alt](https://github.com/kelka17/Aprendiendo-Git-Scesi/blob/81075377cafffd52d288274017da07261e23195f/pngimg.com%20-%20github_PNG65.png).
 ## Clase 1
 ### Repositorio
 <p>
