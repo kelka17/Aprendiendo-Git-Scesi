@@ -719,3 +719,116 @@ Esto mantiene un historial más limpio y organizado en el merge.
 
 		-git push -u origin nombre-de-la-rama
 Esto configura la rama para hacer push automáticamente al remoto sin especificar cada vez.
+
+## Trucos de GitHub
+### 🔥 1️⃣ Crear un Repositorio desde la Terminal (sin abrir el navegador)
+Si ya tienes un repositorio local y quieres crearlo en GitHub sin abrir el navegador, puedes usar el siguiente comando (requiere GitHub CLI):
+
+		-gh repo create nombre-del-repo --public --source=. --push
+- --public: Lo crea como público (puedes cambiarlo a --private).
+
+- --source=.: Usa el repositorio actual como origen.
+
+- --push: Realiza el primer push automáticamente.
+
+### 🚀 2️⃣ Navegar por el Código usando atajos del teclado
+#### Dentro de un repositorio en GitHub:
+- Presiona t: Abre un buscador de archivos.
+- Presiona l: Te permite saltar a una línea específica del archivo.
+- Presiona w: Activa/desactiva el modo "blame" para ver quién cambió cada línea.
+
+### 🔎 3️⃣ Buscar Código en Todo GitHub
+Si quieres buscar un fragmento de código en todos los repositorios públicos:
+
+		-is:public language:Java "public static void main"
+- Puedes filtrar por lenguaje, visibilidad, nombre del repo, entre otros.
+
+### 🎯 4️⃣ Crear Issues Rápidamente desde la URL
+Si quieres crear un Issue rápidamente sin entrar a la interfaz:
+
+		- https://github.com/usuario/repositorio/issues/new
+Puedes incluso prellenar el título y la descripción con parámetros en la URL.
+
+### ⚡ 5️⃣ Editar Archivos Directamente en GitHub
+- Navega al archivo que deseas modificar y presiona el ícono ✏️ (Edit this file).
+
+- GitHub crea un fork automáticamente y te permite crear un PR al terminar.
+
+### 🔄 6️⃣ Restablecer un Archivo a una Versión Anterior
+En la vista del archivo, puedes presionar History, seleccionar el commit que quieres y luego pulsar View File. Desde ahí, puedes copiar el contenido o restaurarlo.
+
+### 💡 7️⃣ Usar GitHub Gist para Fragmentos de Código
+Si quieres compartir un fragmento de código sin crear un repositorio completo, usa:
+
+		-https://gist.github.com/
+Es rápido y fácil para compartir y versionar pequeños bloques de código.
+
+### ✨ 8️⃣ Añadir Badges al README.md
+Los badges son insignias visuales que indican el estado del proyecto. Ejemplos:
+
+		-![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
+		-![Version](https://img.shields.io/badge/version-1.0.0-blue)
+		-![License](https://img.shields.io/badge/license-MIT-green)
+Puedes obtener más badges en Shields.io.
+
+### 🔄 9️⃣ GitHub Pages: Publica un Sitio Web desde tu Repositorio
+Si tienes un repositorio con un proyecto web, puedes publicarlo usando GitHub Pages:
+
+- Ve a Settings → Pages.
+- Selecciona la rama (main o gh-pages).
+- ¡Listo! Tu página estará disponible en:
+
+		-https://usuario.github.io/nombre-del-repositorio/
+### 🚀 🔟 Crear Plantillas de Issues y Pull Requests
+Puedes crear plantillas predeterminadas para Issues y PRs en una carpeta llamada .github/ISSUE_TEMPLATE y .github/PULL_REQUEST_TEMPLATE.md.
+Esto facilita que otros contribuyan correctamente al proyecto.
+
+### 🔀 1️⃣1️⃣ Revisar un Pull Request con Comandos de GitHub CLI
+Si tienes la CLI de GitHub (gh) instalada, puedes revisar PRs rápidamente:
+
+		-gh pr list               # Listar todos los PRs
+		-gh pr checkout 12        # Cambiar al PR número 12
+		-gh pr review 12 --approve # Aprobar el PR
+### 🗂️ 1️⃣2️⃣ Navegar entre Branches desde la Web
+En la interfaz de GitHub, puedes presionar la tecla w y un buscador de ramas se abrirá para cambiar de rama sin salir de la página.
+
+### 🔥 1️⃣3️⃣ Ejecutar Workflows Manualmente en GitHub Actions
+Si usas GitHub Actions, puedes ejecutar un workflow manualmente:
+
+- Ve a Actions → Selecciona el workflow.
+
+- Haz clic en Run workflow.
+
+- Elige la rama y ¡listo!
+
+### ⚡ 1️⃣4️⃣ Editar un PR desde GitHub Web
+Si detectas un error en un PR y tienes permisos, puedes editar el archivo directamente desde GitHub y el cambio se reflejará en el PR automáticamente.
+
+### 🚀 1️⃣5️⃣ Clonar un Repositorio sin el Historial Completo
+Si quieres clonar solo el último commit para ahorrar espacio:
+
+		-git clone --depth 1 https://github.com/usuario/repositorio.git
+### 🔎 1️⃣6️⃣ Buscar Commits de un Usuario Específico en un Proyecto
+Si quieres saber qué commits hizo un usuario en un proyecto:
+
+		-author:usuario
+Puedes usar esto en la barra de búsqueda del repositorio.
+
+### 💬 1️⃣7️⃣ Realizar Comentarios en una Línea Específica
+En un Pull Request, haz clic en el número de línea y selecciona + para comentar. Es útil para discutir detalles específicos del código.
+
+### ⚙️ 1️⃣8️⃣ Reabrir un Issue Cerrado Automáticamente
+Si un Issue se cerró por error o un commit con "Fixes #ID", puedes reabrirlo manualmente en la interfaz o usar:
+
+		-gh issue reopen ID
+### 🎯 1️⃣9️⃣ Crear un Branch desde una Issue
+GitHub te permite crear un branch directamente desde una Issue con un solo clic. Esto facilita el rastreo de cambios relacionados.
+
+### 🔥 2️⃣0️⃣ Clonar un Branch Específico sin el Historial Completo
+
+		-git clone -b nombre-del-branch --single-branch https://github.com/usuario/repositorio.git
+### 💡 2️⃣1️⃣ Sugerencias Directas en un PR
+Puedes sugerir cambios en el código con la opción Add suggestion, lo cual permite al autor aceptarlos directamente.
+
+### 📝 2️⃣2️⃣ Editar Commits en un PR (Squash & Merge)
+GitHub permite hacer "Squash & Merge" para combinar múltiples commits en un solo cambio antes de fusionar.
