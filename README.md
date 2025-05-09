@@ -382,3 +382,78 @@ Se crean a partir de develop y, una vez completadas las correcciones y pruebas, 
 - Estas ramas se utilizan para solucionar errores críticos en producción.
 
 - Se crean a partir de master y se fusionan tanto en master como en develop.
+
+## 📈 Flujo de Trabajo en Git Flow
+### Desarrollo de nuevas características:
+- Se crea una rama feature desde develop.
+- Se trabaja en la funcionalidad y, una vez terminada, se fusiona de vuelta en develop.
+
+		-git checkout develop
+		-git checkout -b feature/nueva-funcionalidad  # Realizar cambios
+		-git commit -am "Agregada nueva funcionalidad"
+		-git checkout develop
+		-git merge feature/nueva-funcionalidad
+
+### Preparación de una nueva versión:
+Cuando se tiene un conjunto de características listas, se crea una rama release desde develop.
+En esta rama se pueden realizar ajustes o correcciones menores.
+
+		-git checkout develop
+		-git checkout -b release/1.0 # Realizar pruebas o ajustes
+		-git commit -am "Corrección de errores menores"
+		-git checkout master
+		-git merge release/1.0
+		-git checkout develop
+		-git merge release/1.0
+
+### Corrección urgente en producción:
+
+Si se detecta un error grave en producción, se crea una rama hotfix desde master.
+Una vez solucionado el problema, se fusiona tanto en master como en develop.
+
+		-git checkout master
+		-git checkout -b hotfix/correccion-urgente  #Solucionar el error
+		-git commit -am "Corregido error crítico"
+		-git checkout master
+		-git merge hotfix/correccion-urgente
+		-git checkout develop
+		-git merge hotfix/correccion-urgente
+## 📦 Cómo Usar Git Flow con Comandos
+###Para facilitar el uso de este flujo de trabajo, puedes usar una extensión de Git llamada Git Flow. Aquí te dejo los comandos más comunes:
+Inicializar Git Flow en tu repositorio:
+
+		-git flow init
+
+Esto creará las ramas develop y master y configurará las ramas secundarias (feature, release, hotfix).
+### Iniciar una nueva rama de características (feature):
+
+		-git flow feature start nombre-de-la-feature
+
+### Finalizar una rama de características (feature):
+
+		-git flow feature finish nombre-de-la-feature
+
+### Iniciar una nueva rama de liberación (release):
+
+		-git flow release start 1.0
+
+### Finalizar una rama de liberación (release):
+
+		-git flow release finish 1.0
+### Iniciar una nueva rama de corrección urgente (hotfix):
+
+		-git flow hotfix start nombre-del-hotfix
+
+### Finalizar una rama de corrección urgente (hotfix):
+
+		-git flow hotfix finish nombre-del-hotfix
+## 📚 Ventajas de Usar Git Flow
+- Organización clara: Cada tipo de trabajo (nueva funcionalidad, corrección, liberación) tiene su propia rama.
+
+- Mejora la colaboración: Los desarrolladores pueden trabajar en diferentes características sin interferir entre sí.
+
+- Gestión eficiente de versiones: El flujo de trabajo asegura que solo el código probado y estable llegue a producción.
+
+- Facilita la gestión de lanzamientos: Puedes preparar versiones sin afectar el desarrollo de nuevas características.
+
+
