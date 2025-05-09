@@ -165,3 +165,23 @@ Para visualizar el historial de commits en todas las ramas de forma gráfica:
 	
 		-git log --oneline --graph --all
 
+## 🎯 Ejemplo de Flujo de Trabajo con Ramas:
+- 1️⃣ Estás en main.
+- 2️⃣ Creas una nueva rama para una funcionalidad nueva:
+
+		-git checkout -b nueva-funcionalidad
+- 3️⃣ Haces tus cambios y los confirmas:
+
+		-git add .
+		-git commit -m "Funcionalidad completada"
+
+- 4️⃣ Vuelves a main y haces un merge:
+
+		-git checkout main
+		-git merge nueva-funcionalidad
+
+- 5️⃣ Opcional: Eliminar la rama porque ya no es necesaria:
+
+		-git branch -d nueva-funcionalidad
+
+
