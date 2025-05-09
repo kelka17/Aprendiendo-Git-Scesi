@@ -459,5 +459,82 @@ Esto creará las ramas develop y master y configurará las ramas secundarias (fe
 ## :computer: Clase 6
 ### Buenas practicas 
 Las buenas prácticas en el desarrollo de software son un conjunto de principios, metodologías y patrones recomendados que los desarrolladores deben seguir para producir un código de alta calidad, fácilmente mantenible y que fomente una colaboración eficiente dentro de un equipo de trabajo.
-Aquí te dejo algunas de las principales buenas prácticas para trabajar con Git, GitHub y desarrollo de software en general:
+
+## 📝 1. Uso Adecuado de Git y GitHub
+### 📂 1.1. Estructura de Repositorios
+- Organiza bien tu repositorio: Incluye archivos clave como README.md, .gitignore, y una licencia (LICENSE).
+- Utiliza un archivo README.md que explique de qué se trata el proyecto, cómo configurarlo, y cómo contribuir.
+- Define una rama principal: Usualmente, la rama principal de producción debe ser master o main, y la de desarrollo debe ser develop.
+### 🧑‍💻 1.2. Mensajes de Commit Claros
+- Escribe mensajes de commit claros y descriptivos: Usa la siguiente convención para los mensajes de commit:
+- Tipo de cambio: (feat, fix, docs, style, refactor, test, chore)
+
+		-git commit -m "feat: agregar funcionalidad de búsqueda"
+### 🔀 1.3. Uso de Ramas
+- Usa ramas para nuevas características (feature/nueva-funcionalidad), correcciones (hotfix/corrección-error) y lanzamientos (release/v1.0).
+- Nunca trabajes directamente sobre la rama main o master. Crea ramas específicas para cada tarea.
+### 🚀 1.4. Manejo de Pull Requests (PR)
+- Haz Pull Requests (PRs) pequeños: Los PRs deben ser fáciles de revisar y no deben ser demasiado grandes.
+- Solicita revisiones de código: Asegúrate de que otros miembros del equipo revisen tu código antes de fusionarlo.
+### ⚙️ 1.5. Revisiones de Código
+- Sigue un proceso de revisión de código: Asegúrate de que el código cumple con los estándares y no introduce errores ni vulnerabilidades.
+- Usa herramientas de análisis estático para detectar posibles problemas de calidad de código.
+
+## 🔍 2. Buenas Prácticas de Programación
+###🧩 2.1. Escribe Código Claro y Legible
+- Usa nombres de variables descriptivos que sean fáciles de entender.
+- Escribe funciones y métodos pequeños: Cada función debe realizar una sola tarea y tener un nombre que describa claramente lo que hace.
+- Comenta el código cuando sea necesario, pero no abuses de los comentarios. El código debe ser lo suficientemente claro para que, en la mayoría de los casos, no se necesiten explicaciones.
+
+### 📏 2.2. Sigue un Estilo de Código Consistente
+- Usa herramientas de formateo automático como Prettier (para JavaScript) o Black (para Python).
+- Establece y sigue convenciones de estilo dentro de tu equipo (nombres de funciones, indentación, uso de corchetes, etc.).
+
+		-Convención de nombres: Usa el estilo camelCase para variables y funciones, y PascalCase para clases.
+
+### 🚦 2.3. Maneja Errores y Excepciones de Forma Adecuada
+- No ignores los errores: Utiliza bloques try-catch (en el caso de lenguajes como JavaScript) para manejar errores de forma controlada.
+- Usa mensajes de error útiles: Asegúrate de que los errores proporcionen información clara sobre qué salió mal.
+
+## 🔧 3. Buenas Prácticas en la Colaboración
+### 👫 3.1. Comunicación Eficiente
+- Usa Issues y Pull Requests de manera efectiva: No sólo para discutir cambios, sino también para planificar tareas, reportar errores y hacer seguimientos.
+- Etiqueta a las personas correctas en los comentarios de las issues o PRs para asegurarte de que los interesados reciban la información.
+
+### 💬 3.2. Revisión y Retroalimentación Constructiva
+- Sé respetuoso y constructivo al hacer revisiones de código. Proporciona feedback claro, especificando tanto lo que está bien como lo que podría mejorar.
+- Asegúrate de resolver todos los comentarios antes de fusionar el código.
+
+### 📅 3.3. Mantén una Buena Documentación
+- Documenta el código y las decisiones de diseño: Si realizaste una decisión importante en la implementación, asegúrate de dejar una pequeña explicación de por qué se tomó esa decisión.
+- Actualiza el README.md cuando sea necesario, especialmente si cambian las dependencias, la configuración o el propósito del proyecto.
+## 🛠 4. Buenas Prácticas en la Gestión del Proyecto
+###📝 4.1. Establece un Plan de Desarrollo
+- Usa metodologías ágiles (Scrum, Kanban) para organizar el trabajo en sprints, tareas y prioridades.
+- Define objetivos claros y alcanzables para cada iteración o versión del proyecto.
+
+### 📊 4.2. Integración y Despliegue Continuos (CI/CD)
+- Automatiza las pruebas: Configura pipelines para que tus tests se ejecuten automáticamente al realizar un commit o PR.
+- Automatiza el despliegue: Usa herramientas de integración continua (como GitHub Actions, Jenkins o Travis CI) para desplegar el código a un entorno de pruebas o producción automáticamente.
+
+### 🛡 4.3. Control de Versiones y Versionado Semántico
+-Usa versiones semánticas (SemVer) para etiquetar versiones de tu software. Esto incluye un formato como v1.2.0:
+
+-  Major: Cambios incompatibles con versiones anteriores.
+-  Minor: Funcionalidades nuevas compatibles con versiones anteriores.
+-  Patch: Correcciones de errores compatibles con versiones anteriores.
+
+### 🔐 4.4. Seguridad
+- No incluyas información sensible en el código fuente, como contraseñas o claves API. Usa archivos .env o servicios de configuración segura.
+- Revisa dependencias regularmente para asegurarte de que no contienen vulnerabilidades.
+
+## 🌍 5. Buenas Prácticas en el Uso de Git y GitHub
+### 🌱 5.1. Trabajar con Repositorios Remotos
+- Siempre actualiza tu rama local con los últimos cambios desde el repositorio remoto:
+
+		-git pull origin main
+- Utiliza las Pull Requests para integrar cambios: Esto facilita las revisiones y mantiene el historial claro.
+### 💡 5.2. Establecer Convenciones de Branching
+- Usa un flujo de trabajo de ramas adecuado (Git Flow, GitHub Flow, etc.), y respétalo dentro del equipo.
+- Nombra tus ramas de manera clara y coherente según el tipo de tarea que estés realizando (ejemplo: feature/nueva-funcionalidad, bugfix/correccion-error).
 
