@@ -456,4 +456,8 @@ Esto creará las ramas develop y master y configurará las ramas secundarias (fe
 
 - Facilita la gestión de lanzamientos: Puedes preparar versiones sin afectar el desarrollo de nuevas características.
 
+## :computer: Clase 6
+### Buenas practicas 
+Las buenas prácticas en el desarrollo de software son un conjunto de principios, metodologías y patrones recomendados que los desarrolladores deben seguir para producir un código de alta calidad, fácilmente mantenible y que fomente una colaboración eficiente dentro de un equipo de trabajo.
+Aquí te dejo algunas de las principales buenas prácticas para trabajar con Git, GitHub y desarrollo de software en general:
 
