@@ -183,5 +183,10 @@ Para visualizar el historial de commits en todas las ramas de forma gráfica:
 - 5️⃣ Opcional: Eliminar la rama porque ya no es necesaria:
 
 		-git branch -d nueva-funcionalidad
+## :hammer: Conflictos en git
 
+Un conflicto en Git sucede cuando Git no puede combinar automáticamente cambios concurrentes de dos ramas. Por ejemplo, si dos desarrolladores modifican la misma línea de un archivo de distinto modo, Git no sabe cuál mantener y genera un conflicto docs.github.com certidevs.com
+-  Lo mismo ocurre si alguien borra un archivo en una rama mientras otro lo modifica en la otra
+docs.github.com
+-  En estos casos Git detiene la operación (merge o rebase) y deja el archivo en conflicto con marcadores especiales. 
 
