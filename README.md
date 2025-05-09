@@ -340,6 +340,6 @@ Para traer cambios del repositorio remoto:
 
 ## 9️⃣ Clonar, Forkear y Contribuir
 
-_ Fork: Crear una copia de un repositorio en tu cuenta.
+- Fork: Crear una copia de un repositorio en tu cuenta.
 - Clone: Descargar esa copia para trabajar localmente.
 - Pull Request: Solicitar la fusión de tus cambios al proyecto original.
