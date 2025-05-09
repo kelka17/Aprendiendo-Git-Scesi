@@ -587,10 +587,135 @@ Solución: Puedes usar el hash del commit para revertirlo.
 Luego, revertir el commit:
 
 		-git revert <hash-del-commit>
-❓ ¿Cuándo usar reset y cuándo revert?
+### ❓ ¿Cuándo usar reset y cuándo revert?
 - Situación			- Herramienta	- Explicación
 - No has hecho push		- git reset	- Es rápido y directo. No afecta a nadie más.
 - Ya hiciste push		- git revert	- Es más seguro. No rompe el historial compartido.
 - Estás en producción		- git revert	- Evita conflictos en el repositorio remoto.
 - El commit es antiguo		- git revert	- Puedes especificar el hash y revertirlo sin afectar otros cambios.
 
+## :computer: Clase 8
+### Trucos de Git
+### 🔍 1️⃣ Ver el Historial de Commits en un Formato Amigable
+
+		-git log --oneline --graph --decorate --all
+Muestra un historial más visual con ramas y un gráfico de las bifurcaciones.
+
+### 🔎 2️⃣ Buscar un Cambio en el Historial
+
+		-git log -S "texto_a_buscar"
+Busca un texto específico dentro de los commits para saber en qué commit se hizo un cambio en particular.
+
+### 🌐 3️⃣ Ver los Cambios en Tiempo Real
+
+		-git diff --color-words
+Muestra los cambios línea por línea, resaltando solo las palabras modificadas.
+### 📝 4️⃣ Guardar Cambios sin Hacer un Commit (Stash)
+
+		-git stash save "Cambios rápidos"
+Almacena temporalmente los cambios para que puedas cambiar de rama sin perder nada.
+Para recuperar los cambios:
+
+		-git stash pop
+### 🚀 5️⃣ Clonar Solo una Rama Específica
+
+		-git clone -b nombre-rama --single-branch https://github.com/usuario/repositorio.git
+Esto evita clonar todo el historial de Git, ahorrando tiempo y espacio.
+
+### ✅ 6️⃣ Deshacer un git add antes del Commit
+
+		-git reset HEAD nombre-del-archivo
+Si agregaste un archivo por error al área de staging, con este comando lo quitas sin eliminar los cambios.
+
+### 🚀 7️⃣ Renombrar una Rama
+
+		-git branch -m nombre-nuevo
+Si quieres renombrar la rama en la que estás actualmente.
+### 🔄 8️⃣ Cambiar al Commit Anterior Rápidamente
+
+		-git checkout @^
+El símbolo @ es un alias para HEAD, y el ^ indica un commit anterior.
+
+### 🗑️ 9️⃣ Eliminar una Rama Remota
+
+		-git push origin --delete nombre-de-la-rama
+Esto elimina la rama del repositorio remoto.
+
+### 🔁 🔟 Recuperar un Archivo Específico de un Commit Anterior
+
+		-git checkout <commit-hash> -- ruta/del/archivo
+Trae de vuelta un archivo de un commit antiguo sin afectar el resto del proyecto.
+
+### ⚡ 1️⃣1️⃣ Ver Qué Cambió en un Commit Específico
+
+		-git show <commit-hash>
+Te muestra el detalle del cambio, quién lo hizo y cuándo.
+
+### 🔄 1️⃣2️⃣ Borrar el Último Commit Sin Perder los Cambios
+
+		-git reset --soft HEAD~1
+El commit se elimina del historial, pero los cambios permanecen en el área de staging.
+
+### 🔥 1️⃣3️⃣ Borrar Todos los Cambios no Comiteados
+
+		-git reset --hard
+Restaura el proyecto al último commit, eliminando cualquier cambio no guardado.
+
+### 🚫 1️⃣4️⃣ Ignorar Archivos Locales sin Modificar .gitignore
+
+		-git update-index --assume-unchanged ruta/del/archivo
+Perfecto para ignorar archivos de configuración local sin alterar el .gitignore.
+
+### 🎯 1️⃣5️⃣ Comprobar en Qué Ramas Está un Commit
+
+		-git branch --contains <commit-hash>
+Útil para saber si un commit se encuentra en alguna rama específica.
+
+### 🔐 1️⃣6️⃣ Verificar el Autor de un Cambio (Blame)
+
+		-git blame nombre-del-archivo
+Muestra línea por línea quién hizo cada cambio y en qué commit.
+
+### 🔄 1️⃣7️⃣ Sincronizar un Fork con el Repositorio Original
+
+		-git remote add upstream https://github.com/original/repo.git
+		-git fetch upstream
+		-git merge upstream/main
+### ⚡ 1️⃣8️⃣ Fusionar Solo un Archivo de Otra Rama
+
+		-git checkout otra-rama -- ruta/del/archivo
+Trae solo un archivo de otra rama a la rama actual.
+
+### 📌 1️⃣9️⃣ Limpiar Archivos Borrados sin Hacer Commit
+
+		-git clean -f
+Elimina archivos no rastreados que quedaron en el proyecto.
+
+### 💡 2️⃣0️⃣ Atajos para Commits y Push en un Solo Comando
+
+		-git commit -am "Mensaje del commit" && git push
+El flag -a añade automáticamente los archivos modificados y el -m define el mensaje.
+
+### 🔎 2️⃣1️⃣ Ver el Último Commit Realizado
+
+		-git log -1
+Muestra un resumen del último commit, incluyendo el autor, fecha y descripción.
+
+### 🚀 2️⃣2️⃣ Rebobinar a un Estado Específico y Crear una Rama
+
+		-git checkout -b rama-nueva <commit-hash>
+Esto te permite partir desde un commit anterior y continuar el desarrollo desde ahí.
+
+### 🔄 2️⃣3️⃣ Fusionar Ramas sin Fast-Forward
+
+		-git merge --no-ff nombre-de-la-rama
+Esto mantiene un historial más limpio y organizado en el merge.
+
+### 🕵️ 2️⃣4️⃣ Ver un Log Resumido de los Últimos 5 Commits
+
+		-git log -n 5 --oneline
+  
+### 🚀 2️⃣5️⃣ Subir Ramas Nuevas sin Especificar origin
+
+		-git push -u origin nombre-de-la-rama
+Esto configura la rama para hacer push automáticamente al remoto sin especificar cada vez.
