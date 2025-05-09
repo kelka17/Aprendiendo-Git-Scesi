@@ -17,9 +17,13 @@ Un repositorio puede estar:
 ### git init
 El comando git init se utiliza para inicializar un nuevo repositorio de Git en un proyecto. Esto convierte una carpeta normal en un repositorio que Git puede gestionar, permitiendo el control de versiones de los archivos en esa ubicación.
 
+ 	-git init
+
 ### git clone 
 El comando git clone se usa para copiar un repositorio remoto en tu máquina local, es una forma de obtener una copia completa del proyecto, incluyendo el historial de cambios, ramas y etiquetas.
-
+ 
+ 	-git clone <nombre-del-archivo>
+  
 ### git status
 El comando git status permite ver el estado actual del repositorio.
 Podrás visualizar:
@@ -27,5 +31,9 @@ Podrás visualizar:
 - Archivos que están en el área de staging.
 - Archivos que no están siendo seguidos por Git.
 
+ 	-git status
+
 ### git add
 El comando git add sirve para añadir archivos al área de preparación, esta área es donde Git guarda los cambios antes de hacer un commit.
+
+ 	-git add <nombre-del-archivo>
