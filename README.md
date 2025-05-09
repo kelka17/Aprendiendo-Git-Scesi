@@ -255,5 +255,91 @@ Si prefieres un entorno visual para resolver conflictos:
 - GitKraken: Ideal para manejar ramas y visualizar conflictos.
 - P4Merge / Meld: Herramientas específicas para comparar y unir código.
 
+## :computer: Clase 4
+## 📌 ¿Qué es GitHub?
+GitHub es una plataforma para alojar proyectos utilizando el sistema de control de versiones Git. Permite colaborar, compartir código y gestionar proyectos de software de forma efectiva y organizada.
+## 1️⃣ Crear un Repositorio en GitHub
+- Ve a GitHub e inicia sesión.
+- Haz clic en New Repository.
+- Escribe el nombre del repositorio y selecciona Public o Private.
+- Marca la opción para crear un README.md si quieres.
+- Haz clic en Create repository.
 
+## 2️⃣ Clonar un Repositorio
+Para trabajar localmente, debes clonar el repositorio:
 
+		-git clone https://github.com/usuario/nombre-del-repositorio.git
+
+## 3️⃣ Conectar un Repositorio Local a GitHub
+Si creaste un repositorio local con git init, puedes conectarlo a GitHub:
+
+		-git remote add origin https://github.com/usuario/nombre-del-repositorio.git
+		-git branch -M main
+		-git push -u origin main
+
+## 4️⃣ Subir Cambios a GitHub
+Después de hacer cambios, debes:
+- Añadir al staging:
+
+		-git add .
+
+- Crear un commit:
+
+		-git commit -m "Descripción del cambio"
+
+- Subir al repositorio remoto:
+
+		-git push origin main
+
+## 5️⃣ Crear y Trabajar con Ramas
+- Crear una nueva rama:
+
+		-git checkout -b nombre-de-la-rama
+
+- Cambiar de rama:
+
+		-git switch nombre-de-la-rama
+
+- Subir la rama a GitHub:
+
+		-git push origin nombre-de-la-rama
+
+## 6️⃣ Fusionar Ramas (Merge)
+
+- Cambia a la rama principal:
+
+		-git checkout main
+
+- Haz el merge:
+
+		-git merge nombre-de-la-rama
+
+- Elimina la rama si ya no es necesaria:
+
+		-git branch -d nombre-de-la-rama
+
+## 7️⃣ Resolver Conflictos
+
+Si Git detecta un conflicto:
+
+- Abre el archivo afectado y busca los marcadores <<<<<<<, =======, >>>>>>>.
+- Edita el archivo para decidir qué cambios conservar.
+- Guarda y añade los cambios:
+
+		-git add nombre-del-archivo
+
+- Finaliza el merge:
+
+		-git commit -m "Conflicto resuelto"
+
+## 8️⃣ Actualizar el Repositorio Local
+
+Para traer cambios del repositorio remoto:
+
+		-git pull origin main
+
+## 9️⃣ Clonar, Forkear y Contribuir
+
+_ Fork: Crear una copia de un repositorio en tu cuenta.
+- Clone: Descargar esa copia para trabajar localmente.
+- Pull Request: Solicitar la fusión de tus cambios al proyecto original.
