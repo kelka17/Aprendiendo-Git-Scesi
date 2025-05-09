@@ -245,5 +245,12 @@ Para comprobar que no quedan conflictos pendientes:
 
 Si todo está bien, Git debería decir: "nothing to commit, working tree clean".
 
+## 🔄 Herramientas para Resolver Conflictos Visualmente
+Si prefieres un entorno visual para resolver conflictos:
+- Visual Studio Code: Muestra los cambios con botones para seleccionar (Accept Current Change, Accept Incoming Change, Accept Both).
+- Sourcetree: Permite ver los conflictos en una interfaz gráfica.
+- GitKraken: Ideal para manejar ramas y visualizar conflictos.
+- P4Merge / Meld: Herramientas específicas para comparar y unir código.
+
 
 
