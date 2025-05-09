@@ -343,3 +343,7 @@ Para traer cambios del repositorio remoto:
 - Fork: Crear una copia de un repositorio en tu cuenta.
 - Clone: Descargar esa copia para trabajar localmente.
 - Pull Request: Solicitar la fusión de tus cambios al proyecto original.
+
+## :computer: Clase 5
+## 📚 ¿Qué es Git Flow?
+Git Flow es una metodología de trabajo que define una serie de ramas en Git para manejar de forma ordenada el desarrollo de software en equipo. Fue propuesta por Vincent Driessen y proporciona una estructura clara para trabajar con diferentes tipos de cambios, como nuevas funcionalidades, correcciones de errores y lanzamientos de nuevas versiones.
