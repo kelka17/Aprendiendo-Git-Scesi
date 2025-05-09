@@ -44,5 +44,12 @@ Guarda los cambios en el historial del repositorio con un mensaje descriptivo.
 
 	-git commit -m"comentario que quieras guardar"
 
+ ### git log
+ El comando git log muestra el historial de commits del repositorio.
+ 	
+  	-git log
+
+ 
+
   
   
