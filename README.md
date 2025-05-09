@@ -13,3 +13,6 @@ Un repositorio puede estar:
 
 - Local: Guardado en tu máquina local.
 - Remoto: Guardado en un servidor (como GitHub, GitLab o Bitbucket).
+## Comandos:
+### git init
+El comando git init se utiliza para inicializar un nuevo repositorio de Git en un proyecto. Esto convierte una carpeta normal en un repositorio que Git puede gestionar, permitiendo el control de versiones de los archivos en esa ubicación.
