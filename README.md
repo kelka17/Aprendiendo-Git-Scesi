@@ -102,6 +102,9 @@ El comando git branch permite crear, listar y eliminar ramas en un repositorio, 
  	-git branch 
 ## :computer: Clase 3
 ### Ramas 🌲 ¿Qué son las Ramas en Git?
+
+![image](https://github.com/user-attachments/assets/116ada14-f7ba-4616-b222-32e387b38043)
+
 Una rama (branch) en Git es una línea de desarrollo independiente. Permite trabajar en funcionalidades nuevas, corregir errores o probar ideas sin afectar la rama principal (main o master).
 Imagina las ramas como caminos paralelos que se pueden unir en un solo camino más adelante.
 
