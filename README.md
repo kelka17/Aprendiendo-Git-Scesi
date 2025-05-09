@@ -3,14 +3,15 @@
 ## :computer: Clase 1
 
 ## 📝 ¿Qué es Git?
+![image](https://github.com/user-attachments/assets/7c86b9c3-ad77-485c-a3c3-a9bb87b3d5bd)
+
 Git es un sistema de control de versiones distribuido que permite a múltiples desarrolladores trabajar en un mismo proyecto de manera coordinada y segura. Fue creado por Linus Torvalds (el mismo creador de Linux) en 2005 para gestionar el desarrollo del kernel de Linux.
 ##  🔹 ¿Para qué sirve?
 - Control de versiones: Permite llevar un historial de cambios de los archivos.
 - Colaboración: Varios desarrolladores pueden trabajar en paralelo sin sobrescribir el trabajo de otros.
 - Seguridad: Los cambios quedan registrados de manera permanente y segura.
 - Deshacer errores: Puedes regresar a versiones anteriores si algo sale mal.
-
-Ramas (Branches): Permite experimentar en paralelo sin afectar el código principal.
+- Ramas: Permite experimentar en paralelo sin afectar el código principal.
 ### :memo: Repositorio
 <p>
 Un repositorio en Git es un espacio donde se almacena el historial de cambios de un proyecto, junto con su código fuente, archivos y documentación. Este historial permite
@@ -23,6 +24,13 @@ Un repositorio puede estar:
 
 - Local: Guardado en tu máquina local.
 - Remoto: Guardado en un servidor (como GitHub, GitLab o Bitbucket).
+⚙️ Configuración inicial de Git
+Después de instalar Git, es necesario configurar tu nombre de usuario y correo electrónico. Esto es importante porque aparecerán en los commits que realizas (como una firma digital).
+
+	-git config --global user.name "Gustavo"
+  
+	-git config --global user.email "gustavomamani2464@gmail.com"
+
 ## :pushpin: Comandos:
 ### :one: git init
 El comando git init se utiliza para inicializar un nuevo repositorio de Git en un proyecto. Esto convierte una carpeta normal en un repositorio que Git puede gestionar, permitiendo el control de versiones de los archivos en esa ubicación.
@@ -63,6 +71,5 @@ Guarda los cambios en el historial del repositorio con un mensaje descriptivo.
 El comando git branch permite crear, listar y eliminar ramas en un repositorio, las ramas son versiones paralelas del proyecto donde puedes hacer cambios sin afectar la rama principal.
 
  	-git branch 
-### 
   
   
