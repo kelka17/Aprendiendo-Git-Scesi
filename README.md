@@ -347,3 +347,38 @@ Para traer cambios del repositorio remoto:
 ## :computer: Clase 5
 ## 📚 ¿Qué es Git Flow?
 Git Flow es una metodología de trabajo que define una serie de ramas en Git para manejar de forma ordenada el desarrollo de software en equipo. Fue propuesta por Vincent Driessen y proporciona una estructura clara para trabajar con diferentes tipos de cambios, como nuevas funcionalidades, correcciones de errores y lanzamientos de nuevas versiones.
+
+## 🚀 Ramas Principales en Git Flow
+Git Flow se basa en dos ramas principales:
+
+- master: La rama principal de producción. Solo contiene versiones estables del código que han sido lanzadas.
+
+- develop: La rama de desarrollo donde se integran todas las características y correcciones de errores antes de ser lanzadas a producción.
+
+## 🚀 Ramas Secundarias en Git Flow
+Git Flow también introduce ramas secundarias para organizar las tareas específicas del flujo de trabajo:
+
+- Feature Branches (Ramas de características):
+
+- Estas ramas se crean para trabajar en nuevas funcionalidades.
+
+- Se crean a partir de la rama develop y se fusionan de nuevo en develop una vez completadas.
+
+- Nombrarlas con feature/nombre-de-la-caracteristica es lo más común.
+
+		-git checkout develop
+		-git checkout -b feature/nueva-funcionalidad
+
+- Release Branches (Ramas de liberación):
+
+Estas ramas se crean cuando se tiene una versión lista para ser lanzada, pero se necesitan pequeñas correcciones o pruebas.
+Se crean a partir de develop y, una vez completadas las correcciones y pruebas, se fusionan en master (producción) y develop.
+
+		-git checkout develop
+		-git checkout -b release/1.0
+
+- Hotfix Branches (Ramas de corrección urgente):
+
+- Estas ramas se utilizan para solucionar errores críticos en producción.
+
+- Se crean a partir de master y se fusionan tanto en master como en develop.
