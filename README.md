@@ -538,3 +538,59 @@ Las buenas prácticas en el desarrollo de software son un conjunto de principios
 - Usa un flujo de trabajo de ramas adecuado (Git Flow, GitHub Flow, etc.), y respétalo dentro del equipo.
 - Nombra tus ramas de manera clara y coherente según el tipo de tarea que estés realizando (ejemplo: feature/nueva-funcionalidad, bugfix/correccion-error).
 
+## :computer: Clase 7 
+## ¿En que casos deshacemos un commit?
+Deshacer un commit en Git es algo común y puede hacerse en distintas situaciones dependiendo del contexto y del estado de los cambios. Aquí te explico los casos más comunes y cómo deshacer un commit correctamente en cada uno de ellos:
+
+### 1️⃣ Deshacer un Commit Local (No publicado en GitHub)
+
+Caso: Cometiste un error en un commit, pero aún no lo subiste al repositorio remoto (git push).
+Solución: Usar git reset para volver al estado anterior.
+
+-		git reset --soft HEAD~1   # Elimina el último commit pero mantiene los cambios en staging.
+- --soft: Elimina el commit, pero conserva los cambios en el área de staging (puedes corregirlos y volver a commitear).
+- HEAD~1: Significa "un commit atrás". Puedes cambiar el número si quieres retroceder más commits.
+### 2️⃣ Deshacer un Commit y los Cambios (No publicado en GitHub)
+Caso: Hiciste un commit que está mal y además quieres borrar los cambios realizados.
+Solución: Usar --hard para eliminar el commit y sus cambios.
+
+		-git reset --hard HEAD~1   # Elimina el último commit y descarta los cambios.
+⚠️ Advertencia: Esta opción borra los cambios del área de trabajo. No podrás recuperarlos a menos que hagas un reflog.
+
+### 3️⃣ Deshacer un Commit ya Publicado (En GitHub)
+Caso: El commit ya se ha hecho push al repositorio remoto, pero necesitas deshacerlo.
+Solución: Usar git revert, ya que es seguro y crea un nuevo commit que "revierta" los cambios.
+
+		-git revert HEAD   # Crea un nuevo commit que revierte los cambios del último commit.
+Esto no borra el historial, simplemente añade un commit inverso que anula los cambios.
+Es ideal para entornos colaborativos donde otros ya podrían estar usando ese código.
+
+### 4️⃣ Deshacer Múltiples Commits (No Publicados en GitHub)
+Caso: Te diste cuenta de que varios commits seguidos están mal y quieres volver a un estado anterior.
+Solución: Usar git reset indicando la cantidad de commits a deshacer.
+
+		-git reset --soft HEAD~3
+Esto elimina los últimos 3 commits, pero mantiene los cambios en staging para corregirlos.
+
+### 5️⃣ Deshacer Múltiples Commits Publicados (En GitHub)
+Caso: Ya subiste varios commits incorrectos al repositorio remoto.
+Solución: Usar múltiples git revert.
+
+		-git revert HEAD~2..HEAD
+Esto crea tres nuevos commits que revierten cada uno de los anteriores de forma segura.
+
+### 6️⃣ Deshacer un Commit Específico (No el último)
+Caso: El error está en un commit anterior, pero los siguientes están bien.
+Solución: Puedes usar el hash del commit para revertirlo.
+
+		-git log
+Luego, revertir el commit:
+
+		-git revert <hash-del-commit>
+❓ ¿Cuándo usar reset y cuándo revert?
+- Situación			- Herramienta	- Explicación
+- No has hecho push		- git reset	- Es rápido y directo. No afecta a nadie más.
+- Ya hiciste push		- git revert	- Es más seguro. No rompe el historial compartido.
+- Estás en producción		- git revert	- Evita conflictos en el repositorio remoto.
+- El commit es antiguo		- git revert	- Puedes especificar el hash y revertirlo sin afectar otros cambios.
+
