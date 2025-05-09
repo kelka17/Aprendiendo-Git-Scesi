@@ -188,5 +188,62 @@ Para visualizar el historial de commits en todas las ramas de forma gráfica:
 Un conflicto en Git sucede cuando Git no puede combinar automáticamente cambios concurrentes de dos ramas. Por ejemplo, si dos desarrolladores modifican la misma línea de un archivo de distinto modo, Git no sabe cuál mantener y genera un conflicto docs.github.com certidevs.com
 -  Lo mismo ocurre si alguien borra un archivo en una rama mientras otro lo modifica en la otra
 docs.github.com
--  En estos casos Git detiene la operación (merge o rebase) y deja el archivo en conflicto con marcadores especiales. 
+-  En estos casos Git detiene la operación (merge o rebase) y deja el archivo en conflicto con marcadores especiales.
+
+## 🔥 Cómo Solucionar un Conflicto en Git (Paso a Paso Claro):
+## 1️⃣ Detectar el Conflicto
+Cuando intentas hacer un merge o un rebase y Git encuentra un conflicto, te muestra un mensaje como este:
+
+		-Auto-merging archivo.txt
+		-CONFLICT (content): Merge conflict in archivo.txt
+		-Automatic merge failed; fix conflicts and then commit the result.
+
+Para ver los archivos en conflicto:
+
+		-git status
+💡 Git listará los archivos como "both modified".
+
+## 2️⃣ Abrir el Archivo en Conflicto
+Dentro del archivo en conflicto, Git inserta delimitadores para que identifiques las diferencias:
+
+		-<<<<<<< HEAD
+		-// Esto es lo que existe en tu rama actual
+		-console.log("Hola desde main");
+		-=======
+		-console.log("Hola desde nueva-funcionalidad");
+		->>>>>>> nueva-funcionalidad
+- <<<<<<< HEAD: La versión de la rama actual (en la que estabas al hacer el merge).
+- =======: Separador entre ambas versiones.
+- >>>>>>> nueva-funcionalidad: La versión que estás intentando fusionar.
+
+## 3️⃣ Editar el Archivo y Resolver el Conflicto
+Tienes que decidir qué parte del código quieres conservar:
+- Puedes elegir la versión de HEAD.
+- Puedes elegir la versión de nueva-funcionalidad.
+- O puedes combinar ambas manualmente.
+
+#### Ejemplo:
+Si decides unificar ambas versiones, el resultado podría ser:
+
+		-console.log("Hola desde main y nueva-funcionalidad");
+- 💡 Elimina los delimitadores (<<<<<<<, =======, >>>>>>>) antes de guardar.
+
+## 4️⃣ Marcar el Archivo como Resuelto
+Una vez que has editado y guardado el archivo, indícale a Git que ya está resuelto:
+
+		-git add archivo.txt
+
+## 5️⃣ Finalizar el Proceso
+Para completar la fusión, necesitas un commit que registre el cambio:
+
+		-git commit -m "Conflicto resuelto entre main y nueva-funcionalidad"
+
+## 6️⃣ Verificar que Todo Está Correcto
+Para comprobar que no quedan conflictos pendientes:
+
+		-git status
+
+Si todo está bien, Git debería decir: "nothing to commit, working tree clean".
+
+
 
